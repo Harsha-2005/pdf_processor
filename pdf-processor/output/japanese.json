@@ -1,0 +1,33 @@
+{
+  "title": "untitled",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "II",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "IIIIIIIII",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "1.1",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "IIIIII",
+      "page": 1
+    }
+  ],
+  "metadata": {
+    "page_count": 1,
+    "body_font_size": 18.0,
+    "font_distribution": {
+      "18.0": 8
+    },
+    "detected_language": "en"
+  }
+}

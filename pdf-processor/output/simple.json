@@ -1,0 +1,24 @@
+{
+  "title": "untitled",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "1. Introduction",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "1.1 What is AI",
+      "page": 1
+    }
+  ],
+  "metadata": {
+    "page_count": 1,
+    "body_font_size": 24.0,
+    "font_distribution": {
+      "24.0": 1,
+      "18.0": 1
+    },
+    "detected_language": "en"
+  }
+}

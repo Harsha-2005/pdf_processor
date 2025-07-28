@@ -1,0 +1,60 @@
+{
+  "title": "untitled",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "Chapter 1",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "Section 1.1",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Subsection 1.1.1",
+      "page": 1
+    },
+    {
+      "level": "H1",
+      "text": "Chapter 2",
+      "page": 2
+    },
+    {
+      "level": "H2",
+      "text": "Section 2.1",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "Subsection 2.1.1",
+      "page": 2
+    },
+    {
+      "level": "H1",
+      "text": "Chapter 3",
+      "page": 3
+    },
+    {
+      "level": "H2",
+      "text": "Section 3.1",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "Subsection 3.1.1",
+      "page": 3
+    }
+  ],
+  "metadata": {
+    "page_count": 3,
+    "body_font_size": 20.0,
+    "font_distribution": {
+      "20.0": 3,
+      "16.0": 3,
+      "14.0": 3
+    },
+    "detected_language": "en"
+  }
+}

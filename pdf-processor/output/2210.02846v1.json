@@ -1,0 +1,8369 @@
+{
+  "title": "2210.02846v1",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "CONVERGENCE RATES FOR ANSATZ-FREE DATA-DRIVEN",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "INFERENCE IN PHYSICALLY CONSTRAINED PROBLEMS",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": ", F. HOFFMANN",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "AND M. ORTIZ",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Institut fur Angewandte Mathematik, Universitat Bonn, Germany",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Hausdorﬀ Center for Mathematics, Universitat Bonn, Germany",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Division of Engineering and Applied Science, California Institute of Technology,",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Pasadena",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Abstract.",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "We study a Data-Driven approach to inference in physical systems in",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "a measure-theoretic framework. The systems under consideration are characterized",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "by two measures deﬁned over the phase space: i) A physical likelihood measure",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "expressing the likelihood that a state of the system be admissible, in the sense of",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "satisfying all governing physical laws; ii) A material likelihood measure expressing",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "the likelihood that a local state of the material be observed in the laboratory. We",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "assume deterministic loading, which means that the ﬁrst measure is supported on",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "a linear subspace. We additionally assume that the second measure is only known",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "approximately through a sequence of empirical (discrete) measures.",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "We develop",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "a method for the quantitative analysis of convergence based on the ﬂat metric and",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "obtain error bounds both for annealing and the discretization or sampling procedure,",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "leading to the determination of appropriate quantitative annealing rates. Finally,",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "we provide an example illustrating the application of the theory to transportation",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "networks.",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "1.",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Introduction",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "We consider the problem of inferring the probability of ﬁnding a physical system",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "in a given state",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "in a linear space",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": ", or phase space, which we assume to be ﬁnite-",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "dimensional. For instance, if the system under consideration is an electrical circuit, then",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "the state of the system consists of the array of potential diﬀerences across the elements of",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "the circuit and the corresponding array of electric currents; if the system is a hydraulic",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "network, then the state of the system consists of the array of head diﬀerences across",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "each pipe and the corresponding array of mass ﬂuxes; if the system is a mechanical truss",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "structure, then the state of the system consists of the array of displacement diﬀerences,",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "or strains, across each member and the corresponding array of internal forces, or stresses;",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "et cetera",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": ". We note that, in all these examples, the state of the system consists of a pair",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "of dual variables and the dimension of phase space is even.",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Physical systems obey ﬁeld equations, which place hard constraints on the possible",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "states attainable by the system. These constraints are material independent and can",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "be regarded as a restriction of the set of admissible states of the system. The view of",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "ﬁeld equations as constraints for purposes of analysis has a long-standing tradition in",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "continuum mechanics and electromagnetism, and constitutes the foundation of recent",
+      "page": 1
+    },
+    {
+      "level": "H1",
+      "text": "arXiv:2210.02846v1  math.OC  20 Sep 2022",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "methods of data-driven analysis 8, 3, physically-informed neural networks (PINNs) 11",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "and other applications of modern data science. Classically, deterministic problems in",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "mathematical physics are closed by further restricting the states of the system to lie in",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "a subset representing the material law of the system, i. e., the locus of states attainable",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "by a speciﬁc material.",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "(a)",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "(b)",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "D,h",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "Figure 1.",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "Classical inference. a) Material likelihood function",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ", here",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "in the form of a sliding Gaussian (dark: low likelihood; light: high likeli-",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "hood), constraint set",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "and likelihood function",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "obtained by restricting",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "to",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ". b) Empirical likelihood measure",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "sampled from",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "In this paper, we work within a general framework 2 for systems in which the ma-",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "terial law and the admissibility constraints are described by positive Radon likelihood",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "measures",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ") and",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "), respectively, representing the likelihood of",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "being a (local) material state observed in the laboratory and of",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "being admissible.",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "Before presenting our new contributions, the main ideas underlying the work may be",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "summarized as follows. The admissible states of the system may be random, e. g., due",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "to the application of random forcing to the system. The observed material states may be",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "random either because the material itself is random or because of experimental scatter,",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "cf. Fig. 1a. We expect the material states",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "and admissible states",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "of the sys-",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "tem to be distributed according to a notion of intersection measure",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "),",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "which can be qualitatively understood as the product measure",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "conditioned to",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ". In the special case in which",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "are regular with respect to the Lebesgue",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "measure, with continuous densities",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ", the likelihood of ﬁnding the system at",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "state",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "is, simply,",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "), which determines the intersection",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ". In",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "particular, if",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ") is integrable and non-zero, the expression",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "(1)",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "gives the expected value of a quantity of interest",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "). Similarly, if",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "with",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "continuous and",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ", corresponding to deterministic loading, then",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ", Fig. 1a. If",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": ", with",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "not parallel, then",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "Suppose now that, as is often the case, the likelihood measure",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "is not known exactly,",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "but only approximately through sequences of empirical measures (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "D,h",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") obtained, e. g.,",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "by means of material testing. Suppose further that the empirical measures supply an",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "increasingly better approximation of",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ", e. g., as a result of increasingly accurate and",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "extensive measurements.",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "We then may expect that, under appropriate conditions of",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "convergence of (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "), the sequence of approximate intersections (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") converge to",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "the exact limiting likelihood measure",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ", thus deﬁning a convergent approximation",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "scheme for the inference problem.",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "A fundamental diﬃculty that arises immediately is that, for most notions of intersec-",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "tions of measures, the intersection of certain pairs of measures may not be well-deﬁned",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "or may be zero. Consider for example the setting in which both",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "are ap-",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "proximated by empirical measures (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") and (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "). A conventional response to this",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "challenge is to introduce Lebesgue-regular approximations (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") and (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") ﬁtted to",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "the data (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") and (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") by means of some method of regression. By regularity, (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "and (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") then have well-deﬁned, continuous densities",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ", respectively, and",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "the intersections (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "), which are intended as approximations of the exact in-",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "tersection",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ", are simply given by (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "))",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "). However, there is no",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "guarantee that this approximation will work in general and the approximations (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "and (",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") need to be chosen appropriately. Here, we take a diﬀerent approach using",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "thermalizations.",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "Overall, there are three main cases of interest:",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "(1) Lebesgue-regular likelihoods;",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "(2) empirical measures;",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "(3) likelihood measures supported on linear subspaces.",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "The general framework presented here allows for the physical likelihood and the material",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "likelihood to be in either of these three classes independently of each other. For (2), we",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "may consider that there is a sequence of approximating empirical measures with the",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "limiting measure belonging to class (1) or (3). In this work, we focus on the case in",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "which the physical likelihood",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "is in (2) approximating (1), and the material likelihood",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "is in (3), see (5) and (6) below.",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "Whereas the measure-theoretical framework just outlined is remarkable for its direct-",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "ness and simplicity, a Bayesian reinterpretation of the rules of inference is often favored",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "in the literature (cf. 14 and references therein). A common",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "ansatz",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "is to introduce the",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "representation",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "ϵ, σ",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ") and a sequence of functions",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ", parameterized by a set of",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "parameters",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ", providing the model",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "(2)",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "η ,",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "where",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "is a random variable, interpreted as observational noise, with likelihood",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "),",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "parameterized by further parameters",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ", and to assume the approximate material likeli-",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "hood to be of the form",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "(3)",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "ϵ, σ",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "))",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": ");",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "Evidently, if",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "attains its maximum at 0, then (2) represents the most likely material",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "law given the",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "ansatz",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "and may thus be regarded as an identiﬁed, or learned, material",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "model. A common choice for",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "are neural networks, in the context of machine learn-",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "ing 7, whereas a common choice of",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "is Gaussian 10, 4.",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "Common methods of",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "regression used to determine the parameters from the data include classical methods of",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "statistical inference such as maximum likelihood 9, 5, variational approaches based on",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "the introduction of a loss function 14, measure-theoretical approaches based, e. g., on",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "the Wasserstein distance 1 or the Kullback-Leibler discrepancy 12.",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "An essential problem with this approach is that the choice of material models",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "observational noise",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": ", priors, loss functions and parameterizations thereof are often",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "not prescribed by theory or fundamental considerations but instead dictated by conve-",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "nience. Worse still, the form of",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "is often ﬁxed throughout the sequence, e. g., to be",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "Gaussian, which renders the approximation scheme non-convergent in cases where the",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "underlying likelihood measures",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "are not of the same form. Since the limit-",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "ing likelihood measures",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "are often not known in practice, it is generally not",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "possible to ensure that approximation schemes tied to particular choices of models and",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "priors be convergent. In addition, it is clear that, even in the best of circumstances,",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "representations of the form (2) and (3) introduce modeling bias and error and incur in",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "loss of information relative to the data sets themselves.",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "The",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "ansatz",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "-free approach of 2 adopted here leads to a direct connection between data",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "and inference and is therefore lossless and free of modeling bias. In addition, it allows",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "to treat unbounded likelihoods, a setting where it is not clear how to set-up a Bayesian",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "framework that is able to address the questions of inference and approximation. Our",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "approach overcomes the problem of unbounded likelihoods and zero intersection between",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "the approximating likelihood measures (",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": ") with (",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": ") by recourse to thermalization",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "and annealing. Speciﬁcally, we consider a sequence",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "of reciprocal temperatures",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "for",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": ", and replace",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "by its thermalization",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "(4)",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "As",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": ", this regularization increasingly concentrates",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "to the diagonal diag(",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "and is therefore expected to deliver the sought intersection",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "in the limit. Suppose,",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "for instance, that the approximate material likelihood measure is",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "(5)",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "where (",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": ") are point data sets in",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "0 are weights. Suppose, in addition, that",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "the loading is deterministic,",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "(6)",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "E,",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "where",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "is an aﬃne subspace of",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "of dimension",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "is the Hausdorﬀ mea-",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "sure restricted to",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": ". Then, the approximate expectation of a quantity",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "corresponding to (4) is, cf. Section 4.2,",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "p, z",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "(7)",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "which is explicit in the data and eschews the need for",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "ansatze",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "of any type, be they",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "material models or priors. We do not consider the deﬁnition of the constraint set",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "as a",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "modelling step given that it encodes the governing physical laws. Data-driven inference",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "rules such as (7) are amenable to eﬃcient numerical implementation in combination with",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "stochastic quadrature formulas for the evaluation of the integrals 13.",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "However, the analysis of 2, based on the concept of weak convergence, is not quan-",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "titative. It does not permit to obtain convergence rates, both for the convergence of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "to some limit",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "and for the convergence of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "h,β",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "to",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": ". In particular, it is not clear the",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "thermalization parameter",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "in (7) should be chosen in practice.",
+      "page": 5
+    },
+    {
+      "level": "H2",
+      "text": "1.1.",
+      "page": 5
+    },
+    {
+      "level": "H2",
+      "text": "Main Results.",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "Our aim is to obtain quantitative estimates for the convergence",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "to its limit",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "and the convergence of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "to",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": ", leading in particular to a",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "prescription for the choice",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "which ensures the desired convergence",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": ". In",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "order to make convergence quantitative, we work in a metric setting and not only in",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "terms of weak convergence as in 2. Our starting point is this observation:",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "The ﬂat norm metrizes weak convergence on bounded and tight sets of measures.",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "We adopt, in this metric setting, the notion of transversality and of diagonal concentra-",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "tion for (possibly unbounded) measures via thermalization as developed in 2. We in-",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "troduce a weaker concept,",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "weak transversality",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": ", which corresponds to transversality along",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "subsequences, see Deﬁnition 3.1, and circumvents the need for regularity assumptions on",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "the measure",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": ". Then, Prokhorovs theorem shows that:",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "If",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "is such that the measures",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "are uniformly bounded and uniformly tight,",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "then it is weakly transversal and, in particular, it has one or more diagonal",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "concentrations.",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "Having framed the thermalization problem in a metric setting, we may make use of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "standard devices such as uniform convergence and diagonal subsequences. This permits",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "to decouple the thermalization problem (",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": ") from the approximation problem (",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "). A typical statement (not detailed here) is:",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "Assume that i)",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "are uniformly transversal and ii)",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "have thermalizations",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "that are uniformly bounded, uniformly tight and uniformly approximate the",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "thermalization of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "Then",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "is transversal and its diagonal concentration is",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "approximated by the diagonal concentrations of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "In particular, the diagonal concentration of an unknown measure",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "is recovered from the",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "diagonal concentrations of an approximating sequence of measures.",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "We demonstrate the usefulness of this abstract framework by considering speciﬁc",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "classes of measures. We ﬁrst focus on sub-Gaussian material likelihoods combined with",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "a deterministic physical likelihoods. Speciﬁcally, we consider measures of the form",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "(8)",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "for some",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "-dimensional aﬃne subspace",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "and Φ :",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "satisfying",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "(9)",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "Φ(",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "for some constants",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "0,",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "0 and",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "0. Condition (9) can be interpreted as a",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "transversality condition in view of the following result.",
+      "page": 5
+    },
+    {
+      "level": "H2",
+      "text": "Theorem 1.1",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "(informal, see Prop. 3.3 and Prop. 3.4)",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "Measures",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "satisfying",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "(8)",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "(9)",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "are weakly transversal and admit a diagonal concentration. Further, if",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "and its",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "derivative does not grow too fast, then",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "is strongly transversal and the thermalizations",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "converge to the diagonal concentration",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "with rate",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "We remark that, for fully deterministic systems, the potential Φ is the indicator",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "function of a set",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": ", in which case (9) corresponds precisely to the deﬁnition of",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "transversality introduced in 3.",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Next, we consider the case in which the material likelihood measure",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "is known only",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "approximately through a sequence of empirical measures. We assume control both on the",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "spatial resolution of the approximation (quantiﬁed by",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ") and on the weights (quantiﬁed",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "by",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ").",
+      "page": 6
+    },
+    {
+      "level": "H2",
+      "text": "Theorem 1.2",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "(informal, see Cor. 4.2)",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Assume that for each",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "we can ﬁnd a",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "partition",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ", a parameter",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "that captures how well the discretization",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "approximates",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "and a parameter",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "that captures how well",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "approximates the",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "mass",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ". If",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ", δ",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "as",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "in such a way that",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "is bounded,",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "then",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "(10)",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ") sup",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "provided",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "has uniformly bounded and uniformly tight thermalizations.",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "In practice, the parameter",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "is determined from the experimental data sets. The-",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "orem 1.2 shows how to choose the cooling schedule",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "depending on",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ". For the case",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "of sub-Gaussian measures of the form (8)-(9), we can make this analysis quantitative.",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Choosing",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "), or",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "0, Th. 1.1 and Th. 1.2 give",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "(11)",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "for some constants",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ", C",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "0 and",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "suﬃciently large. The optimal cooling schedule is",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "therefore",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "and the convergence rate in the ﬂat norm is",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "In summary, the analysis in this work ensures convergenceat a well-deﬁned rateof",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "point-data approximations, should said point data (",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ") be obtained by means of well-",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "designed experiments supplying an increasingly faithful representation of the underlying",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "likelihood measure",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ". In practice however, the underlying material likelihood measure",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "may be unknown and the assumptions in the rigorous statement of Theorem 1.2",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "cannot be veriﬁed directly from the data. This epistemic bottleneck notwithstanding,",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "we note that the convergence of the thermalized approximations",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "can in principle be",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "assessed by determining if the sequence is Cauchy, since that criterion does not require",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "explicit knowledge of the limit. A detailed assessment of matters of implementation is",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "beyond the scope of the present paper and may be found in 13.",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Background material and the general problem formulation are introduced in Section 2.",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "The abstract strategy for solving inference problems via thermalization and formulating",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "approximations thereof is enunciated in Section 3. In Section 4 we address approxima-",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "tion and convergence of material point-data sets. Finally, in Section 5 we describe a",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "representative example.",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "2.",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Problem formulation",
+      "page": 6
+    },
+    {
+      "level": "H2",
+      "text": "2.1.",
+      "page": 6
+    },
+    {
+      "level": "H2",
+      "text": "Prolegomena.",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "We denote by",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ") the set of real-valued Radon measures, write",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "for the total variation of the measure",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ", and sometimes shorten",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ").",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "In addition, we denote by",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ") :",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ") :",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "the set of bounded",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "real-valued Radon measures. We denote by",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ") and",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "), respectively, the",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "corresponding sets of non-negative measures. We say that",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "in",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": ") in the wide",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "(or weak-) topology if",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "(12)",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "lim",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "fdµ",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "fdµ",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "with",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ") the set of continuous functions over",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "with compact support. In addition,",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "we say that",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "in",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ") in the narrow topology if",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "(13)",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "lim",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "fdµ",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "fdµ",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "with",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ") the set of bounded continuous functions.",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "We remark that (13) is the narrow convergence normally used for probability measures,",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "which is stronger than weak convergence of ﬁnite Radon measures usually deﬁned testing",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "with",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "). Condition (13) in particular (testing with",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "1) implies",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "). Indeed, it is possible to show that, for nonnegative measures, condition (13) is",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "equivalent to (12) and",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "We say that a subset",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ") is uniformly tight if for every",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "0 there is a",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "compact set",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "such that, for all",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ". The subset",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "is uniformly",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "bounded if there is",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "0 such that, for all",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ". By Prokhorovs theo-",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "rem, sets that are uniformly tight and uniformly bounded are sequentially precompact",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "with respect to the narrow convergence in",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ").",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "The space",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "BL",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ") of bounded Lipschitz functions is a Banach space with norm",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "(14)",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ": max",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ", ℓ",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "Lip(",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "where we introduce a ﬁxed dimensional constant",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "0.",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "We recall that the narrow",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "topology of",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ") as deﬁned in (13) is metrized by the ﬂat norm",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "(15)",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ": sup",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "f dµ",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "on uniformly tight and uniformly bounded subsets (cf., e. g., 6, Th. 2.7(i)).",
+      "page": 7
+    },
+    {
+      "level": "H2",
+      "text": "2.2.",
+      "page": 7
+    },
+    {
+      "level": "H2",
+      "text": "Classical inference.",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "We consider systems whose state is represented by points in",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "a ﬁnite-dimensional space",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ", or phase space. It is equipped with a scalar product and",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "corresponding norm",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "and is identiﬁed with",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ". The systems are characterized by",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "two measures over",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ": i) a physical likelihood measure",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "expressing the likelihood that",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "a state of the system be admissible; ii) a material likelihood measure",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "expressing the",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "likelihood that a local state of the material be observed in the laboratory (we ignore here",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "the subtle question of the characterization of the random experimental setup which could",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "lead to those observations). In this paper, we focus on the case of deterministic loading,",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "in the sense of (6), and consider the measure",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "on",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "which fully characterizes the system both as regards material behavior and constraints.",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "The classical inference problem is then to determine the likelihood of observing a material",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "state",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "and an admissible state",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "conditioned to",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ". As a result, we expect",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "the likelihood measure solving the inference problem to be a certain concentration of",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "to the diagonal diag(",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ").",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "Whereas neither",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "nor",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "are ﬁnite in general, we expect the intersection",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "as deﬁned in this work to be ﬁnite and non-degenerate in the cases of interest, i. e.,",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": ", cf. Fig. 1a. In particular,",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "can be normalized by",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "to deﬁne a probability measure characterizing the expectation of outcomes",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "of the system. The condition that the intersection",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "be well-deﬁned, ﬁnite and",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "non-degenerate sets forth a general notion of",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "transversality",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "between the measures",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "3.",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "Thermalization",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "We introduce a notion of thermalization and diagonal concentration that extends the",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "one proposed in 2.",
+      "page": 8
+    },
+    {
+      "level": "H2",
+      "text": "3.1.",
+      "page": 8
+    },
+    {
+      "level": "H2",
+      "text": "General setting.",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "Starting from a general measure",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "), for",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "0 we",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "deﬁne the",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "thermalized",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "measure",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "(16)",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "µ,",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": ") :",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "Evidently, the weight",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "suppresses the contributions away from the diagonal as",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "which suggests identifying all possible diagonal concentrations of",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "with the weak limits",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": ", if any. We formalize this identiﬁcation as follows.",
+      "page": 8
+    },
+    {
+      "level": "H2",
+      "text": "Deﬁnition 3.1",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "(Diagonal concentration, transversality)",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "Let",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": ". We say",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "that",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "is a",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "diagonal concentration",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "if there is a sequence",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "such that",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "in the narrow topology. We say",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "that",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "is",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "weakly transversal",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "if it has a diagonal concentration.",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "We say that",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "is a",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "strong diagonal concentration",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": ", and",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "is",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "strongly transversal",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "(or",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "simply",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "transversal",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": ") if",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "suﬃciently large and",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "If",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "µ, ν",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "are such that",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "is strongly transversal, then we say that its (strong)",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "diagonal concentration is the",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "intersection",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": ", denoted by",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "The notion of (strong) transversality was introduced in 2, Def. 4.1; the weaker notion",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "of weak transversality is new. Both are diﬀerent from the use of the term transversal in",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "3. We note that a measure",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": ") can have several diagonal concentrations, or",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "none at all. In the former case, the inference problem set forth by",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "has multiple",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "solutions, whereas in the latter it has no solution. The theoretical background recalled",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "in Section 2.1 leads to some noteworthy consequences:",
+      "page": 8
+    },
+    {
+      "level": "H2",
+      "text": "Remark 3.2.",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "i)",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "If the sequence",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "(or",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": ") is uniformly bounded and uniformly tight, then the",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "narrow convergence can be equivalently replaced by strong convergence in the ﬂat",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "norm.",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "ii)",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "By Prokhorovs theorem, if a sequence",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "is uniformly bounded and uniformly",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "tight then it has a subsequence which converges narrowly and",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "is weakly transver-",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "sal.",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "iii)",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "If a diagonal concentration exists, then it is supported on",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "diag(",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "(see",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "2,",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "Lemma 4.3",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": ").",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "iv)",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "If",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "is uniformly bounded, uniformly tight and Cauchy with respect to the ﬂat",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "norm, then it is strongly transversal.",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "These observations evince that the property that",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "be uniformly bounded and uni-",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "formly tight plays a crucial role in analysis.",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 9
+    },
+    {
+      "level": "H2",
+      "text": "3.2.",
+      "page": 9
+    },
+    {
+      "level": "H1",
+      "text": "Sub-Gaussian likelihood measures.",
+      "page": 9
+    },
+    {
+      "level": "H2",
+      "text": "We discuss transversality in further detail",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "in the case that",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "is sub-Gaussian, in the sense made precise below.",
+      "page": 9
+    },
+    {
+      "level": "H2",
+      "text": "Proposition 3.3",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(Transversal likelihood functions, existence)",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Suppose that",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(17)",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "E,",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "for some Borel function",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Φ :",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "and some",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "-dimensional aﬃne subspace",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Assume that there exist constants",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "such that",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(18)",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Φ(",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "E.",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Then, the set",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ", β",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "is uniformly bounded and uniformly tight in",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ". In particular,",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "is weakly transversal and has a diagonal concentration.",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Proof.",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "We denote by",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "the linear space parallel to",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ", by",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "its orthogonal complement,",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "and by",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "the orthogonal projections with respect to the scalar product of",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ". We change variables according to",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(19)",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ")  (",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "η, ξ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "with",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Speciﬁcally,",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ". Let",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "be the point",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "closest to the origin, so that",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ". By orthogonality",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(20)",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "which implies",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(21)",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Indeed, if",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "then 4",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ". Otherwise,",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ", and so 4",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ". This concludes the proof of (21).",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "With",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ", condition (18) implies",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(22)",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Φ(",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "E, η",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ", ζ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "For every",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "; 0",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ")), from (17) and (22) one obtains, for",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "fdµ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "η, ξ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ")e",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "η, ξ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ")e",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "η, ξ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": ")e",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(23)",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "Inserting",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "1 in (23), we have, by Fubinis theorem,",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "η, ζ",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "C,",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(24)",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "independently of",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "(for every",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "), and uniform boundedness follows.",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "10",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "For",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "0, let",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ") :",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ". The same computation shows that",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "η, ζ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(25)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "The ﬁrst integral equals",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "and the second converges to zero as",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "independently of",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ". Therefore lim",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "sup",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ")  0. Analogously, with",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ") :",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ", changing variables to ˆ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "),",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "η, ζ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(ˆ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(ˆ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(26)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "which converges to zero as",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ", implying lim",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "sup",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ")  0. As",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(27)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ": (",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ") :",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "R,",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "is compact, this concludes the proof of uniform tightness. Weak transversality follows",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "by Prokhorovs theorem.",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "Strong transversality requires regularity of Φ in the direction orthogonal to",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ". To",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "simplify notation, we introduce the functionΨ :",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(28)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "Ψ(",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ") : Φ(",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "and denote by",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "Ψ(",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ") the partial derivative of Ψ(",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ") with respect to",
+      "page": 10
+    },
+    {
+      "level": "H2",
+      "text": "Proposition 3.4",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(Diagonal concentration of sub-Gaussian measures)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "Suppose that the",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "assumptions of Prop. 3.3 hold. In addition, assume:",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "i) Ψ(",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "is continuously diﬀerentiable with respect to",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ii)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "There are constants",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "and a function",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "satisfying",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ", where",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "is as in",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(18)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ", such that",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(29)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "Ψ(",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(1",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "E, η",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "Then,",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "is strongly transversal and its diagonal concentration",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "is given by",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(30)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ξ, ξ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ") e",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "for every",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ". Further, there is",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "such that, for",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "suﬃciently large,",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(31)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "Proof.",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "It suﬃces to prove (31) for",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "deﬁned by (30). We ﬁx",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "BL",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ") with",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "1, Lip(",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "and rewrite the deﬁnition of",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "as",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "(32)",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ξ, ξ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": ") e",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "11",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "We then compute, as in the ﬁrst step of (23),",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": ")(",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": ")e",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ,",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "0)e",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "(33)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "where we write, for (",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": ") :",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "η, ξ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": ").",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "As",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "is",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "-Lipschitz, so is",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ,",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "), and",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "(34)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ,",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "0)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "As Ψ is diﬀerentiable in the second argument, using ii)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "Ψ(",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, tη",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "dt",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "(1",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": ") max",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "(35)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "From (22), we further obtain",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "(36)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "Ψ(",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, tη",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "and with a triangular inequality and",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "1, we have",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": ")e",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ,",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "0)e",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ,",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "0)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ,",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "0)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "(37)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "Therefore, for",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ, η, ζ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "(38)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "By the assumption on",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "), the integral in",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "gives a ﬁxed constant. In the others we",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "change variables, according to ˆ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": ", and we obtain",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "Cβ",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "(39)",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "which concludes the proof.",
+      "page": 11
+    },
+    {
+      "level": "H2",
+      "text": "Remark 3.5.",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "The rate",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "is a result of Taylor expanding",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "in the second ar-",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "gument, and can therefore only be improved using our approach if",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "is such that the",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "corresponding",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "satisﬁes",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "Ψ(",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "ξ,",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "0)  0",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "4.",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "Approximation",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "We proceed to exploit the thermalization framework set forth in the foregoing for",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "purposes of approximation by discrete measures.",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "12",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 12
+    },
+    {
+      "level": "H2",
+      "text": "4.1.",
+      "page": 12
+    },
+    {
+      "level": "H1",
+      "text": "General strategy.",
+      "page": 12
+    },
+    {
+      "level": "H2",
+      "text": "We ﬁrst observe that transversality and approximation can be",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "decoupled. Indeed, assume that",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ") is transversal, and let",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "), be such that",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "Suppose, in addition, that for some",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "approximating sequence (",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ") we have",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "(40)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "Writing",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ")  (",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "), necessarily",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ". Therefore,",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "in the following we focus on (40).",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "We remark that",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "is not known in practice and (40) cannot be veriﬁed directly.",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "However, the sequence",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "is known, andby extrapolating values computed for a",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "few values of",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "it is possible to verify if it is uniformly bounded, tight, Cauchy in the",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "ﬂat norm and, consequently, converges to a limit. It bears emphasis that this scheme is",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "entirely built upon the data (",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ") and at no time knowledge of the underlying measure",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "which is unknown in general, is required. It should also be noted that the convergence of",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "to the thermalization of",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "depends critically on the choice of the annealing sequence",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ". It is, therefore, important to determine conditions on the annealing sequence ensuring",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "convergence under appropriate growth and regularity assumptions.",
+      "page": 12
+    },
+    {
+      "level": "H2",
+      "text": "4.2.",
+      "page": 12
+    },
+    {
+      "level": "H2",
+      "text": "Approximation by discrete material measures.",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "We proceed to further assess",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "the feasibility of the abstract frameworks set forth above by considering the speciﬁc case",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "of approximation by discrete material measures. Measures supported on ﬁnite point sets",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "are of practical signiﬁcance, since they represent material data sets resulting from dis-",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "crete experimental measurements. They also provide a natural means of approximating",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "general measures in the sense of weak convergence. Speciﬁcally, we consider a sequence of",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "material likelihood measures",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "of the form given in (5). We begin by showing that, if",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ") is uniformly bounded and tight and (",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ") suitably approximates",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ", then (",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "is also uniformly bounded and tight.",
+      "page": 12
+    },
+    {
+      "level": "H2",
+      "text": "Proposition 4.1",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "(Boundedness and tightness)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "Let",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "with",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "as in (6). Assume",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "i) (",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ", for",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ", is uniformly bounded and uniformly tight.",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "Let",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ", with",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "as in (5). Let",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "Assume further that, for every",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ", there is a partition",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ", with",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "for every",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "and every",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ", such that:",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "ii)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "There is",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "such that, for all",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "and all",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "(41)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "cµ",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "iii)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "The sequence",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "is bounded.",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "iv)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "There is",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "such that for all",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": ", all",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "(42)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "v)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "For all",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "(43)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "Then there is",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "such that, after restricting to",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "a)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "The sequence",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "is uniformly bounded in",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "b)",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "The sequence",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "is uniformly tight in",
+      "page": 12
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "13",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "Proof.",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "a) For",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "as in (6) and",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "D,h",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "as in (5), for any",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "0 we have",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "h,β",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "TV",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "h,β",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "h,β",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "(44)",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "We denote by",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "the closest-point projection from",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "onto",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": ". By orthogonality,",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": ", whence",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "(45)",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "We claim that for all",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "(46)",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "To see this, we use that Id",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "is a projection and (v) to get",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "(47)",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "and with",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": ", equation (46)",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "follows.",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "An application of Jensens inequality to the convex function",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "log",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "and (46) give, for",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "any ﬁxed",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "log",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "(48)",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "which, rearranging terms, reads",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "(49)",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "Using this bound, (ii), the deﬁnition of",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": ", and the fact that",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": ", (45) becomes",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "(50)",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "Summing over all",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "ﬁnally gives",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "(51)",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "Using this for",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "proves the claim since, by (i),",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "for",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "is uniformly",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "bounded and by (iii) (",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": ") is also uniformly bounded.",
+      "page": 13
+    },
+    {
+      "level": "H3",
+      "text": "14",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "b) By the uniform tightness of (",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "), for every",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "0 there are compact sets",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "such that",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(52)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "δ,",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ". The strategy of the proof is as follows: we show that for all",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "0,",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "there exists a choice of small enough",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "0 and corresponding sets",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "depending on",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "such that for suﬃciently large",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "one has",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "ϵ.",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(53)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "More precisely, for",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "as in assumption (iv) and some",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "0 chosen below, we deﬁne",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "max",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ": dist(",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "z, L",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(54)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "Further, deﬁning",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ", let",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "be the span of the",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "-cell cover of",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ". It follows that",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ". We pick a",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "and assume that",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "is",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "chosen so that",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "1 for all",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ". Then for any",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "by (iv)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(1",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(55)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "where we chose",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(1",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ". Let",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ". Then there is",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ", and by",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(55)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ". This implies",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ", and therefore",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "The proof for bound (53) consists of two parts. First we localize in the ﬁrst argument,",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "and show that there exists a constant",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "0 only depending on",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "such that for",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "all",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "suﬃciently large,",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "Cδ .",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(56)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "Then we localize in the second argument, and show that there exists a constant",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "only depending on",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "such that for",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "suﬃciently large,",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "))",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "Cδ,",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(57)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "The two estimates are then combined in (67)-(68) below.",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "To show (56), we proceed as in (44) with the sum restricted to",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "and,",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "together with the same estimate as in (50), we obtain",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(58)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "Recalling that",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": ", for",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "suﬃciently large that",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "one has",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "δ.",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "(59)",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "Together with assumption (iii), we conclude that (56) holds.",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "15",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "To prove (57), we compute as in (44), using (ii),",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "h,β",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "))",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "cµ",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(60)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "The conditions",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "and the deﬁnition of",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "imply",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(61)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "We next show that there is",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(0",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "1) such that for any",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": ", any",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": ", any",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": ", if (v)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "and (61) hold then",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(62)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "To see this, we estimate, using again convexity of",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "log",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(63)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "log",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "aβ",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "With",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "and (v) this becomes",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(64)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "log",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "aβ",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "aβ",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "and with (61) and",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "1 we obtain",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(65)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "log",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "We ﬁnally choose",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": ": (1",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "2 and taking an exponential on both sides concludes",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "the proof of (62). Using (62) and (60) gives for",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "aβ",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "))",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "ca",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "))",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "ca",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "))",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "ca",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "ca",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "δ,",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(66)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "where we used that",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "and (52). This proves (57).",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "Combining estimates (56) and (57), using that",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(67)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "))",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "and that all measures vanish on",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "), we conclude",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "))",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "Cδ,",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "(68)",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "for some (diﬀerent) constant",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "0, provided",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "is suﬃciently large. Therefore for every",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "0, we can choose",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "small enough such that this is smaller than",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": ", as",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "required.",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "16",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "We note that conditions (ii), (iv) and (v) stipulate precisely how the sequence (",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ") of",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "point-data sets must approximate the material likelihood measure",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "in order to ensure",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "convergence. Condition (iii) relates the sequences (",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ") and (",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ") and, speciﬁcally, requires",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "to diverge no faster than",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "Finally, we turn to quantitative convergence in the ﬂat norm.",
+      "page": 16
+    },
+    {
+      "level": "H2",
+      "text": "Corollary 4.2",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(Convergence in ﬂat norm)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "Suppose that the assumptions of Prop. 4.1",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "hold. Assume in addition that there is",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "such that, for all",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(69)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "Then for suﬃciently large",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ", we have",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(70)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ") sup",
+      "page": 16
+    },
+    {
+      "level": "H2",
+      "text": "Remark 4.3.",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "Assumption",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(69)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "obviously implies assumption (ii).",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "Proof of Cor. 4.2.",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "For any",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "BL",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ") with",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "1 and Lip",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ")(",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "p, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(71)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "We write, recalling",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "1,",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ")(",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(72)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "with",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "p, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ")e",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ")e",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(73)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "The ﬁrst term is estimated using (69),",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(74)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "Next, we proceed to estimate the second term in the bound. Writing",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "p, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ")e",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": ")e",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "p, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "))e",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(75)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "and recalling Lip",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "1, we obtain",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "(76)",
+      "page": 16
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "17",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "In order to estimate the last term, we compute the remainder term in Taylors expansion",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "as",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "dt",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(77)",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "and since by Assumption (iv) we have",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": ", and",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "1,",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(78)",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "dt",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "p, z",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": ") : e",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "Factorizing the ﬁrst term in (77) and then using a triangular inequality,",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "p, z",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "p, z",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": ")(",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(79)",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "Integrating (79) and using Holder and Assumption (v),",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "p, z",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(80)",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "In order to incorporate the term",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "into the exponential, we remark that log",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "2 implies",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "0. Using this with",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "yields",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(81)",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "For the other term in (80) we use",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": ". We conclude,",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(82)",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "and all",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": ", with",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "1 a constant depending on",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": ". We turn back",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "to (76), use Holder and Assumption (v) in the ﬁrst term, and (82) in the second one, as",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "well as",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(1",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "). We obtain",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(83)",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "Combining (72), (74), (83) and (44),",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "fd",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(84)",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "Using (51) with",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "and with",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(2",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": ") and then (iii) and",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "gives",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "fd",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "cδ",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "(85)",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "for some",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "0. We conclude using (i) and recalling that",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "18",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "We note that, under the conditions of Prop. 4.1 and Cor. 4.2, convergence in the ﬂat",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "norm is attained if:",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "0, which ensures that the discrete measures in",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "D,h",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "carry",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "the right amount of mass in the limit;",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "0, corresponding to an increasingly ﬁne",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "discretization of",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "; and",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "0, which requires",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "to diverge to",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "more slowly",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "than",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ". This estimate permits to render the decoupling",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ") quantitative. Thus, consider for instance the case in which",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "approximates",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "a measure",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ", with Φ satisfying both (18) and (29). In addition, choose",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ") for simplicity, yielding",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "0. Then, the bounds (31) and (70) lead (for",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "large",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ") to the estimate (11), whereupon a minimization of the bound gives",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ". These estimates simultaneously set forth the optimal annealing",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "rate and the resulting convergence rate in the ﬂat norm, as anticipated in Section 1.",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "5.",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "Example: Transportation networks",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "As an illustrative example of application, we consider a transportation network, e. g.,",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "pipeline systems, traﬃc networks, electrical circuits and grids, consisting of",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "free nodes",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "oriented edges. Every free node in the network carries a potential. In addition,",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "the network may contain grounded nodes or nodes connected to a source, which are held",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "at a ﬁxed potential. We denote by",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "the array of free-node potentials, by",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "the array of potential diﬀerences along the edges and by",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "the corresponding",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "ﬂuxes.",
+      "page": 18
+    },
+    {
+      "level": "H2",
+      "text": "5.1.",
+      "page": 18
+    },
+    {
+      "level": "H2",
+      "text": "Field equations.",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "The nodal potentials, edge potential diﬀerences and edge cur-",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "rents satisfy the conservation and compatibility relations",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "(86)",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "Bu",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "g,",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "with sources",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ", applied potential diﬀerences",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "and connectivity matrix",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ". The corresponding phase space is",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ", metrized by the norm",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "(87)",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "with coeﬃcients",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "0,",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ", . . . , N",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "Here and below, we write",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "ϵ, σ",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ", σ",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ", . . . ,",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ", σ",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ")). The conditions (86) deﬁne the set of admissible states",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "(88)",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "ε, σ",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "Bu",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "g, B",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "parametrized by",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ". We assume that",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "are deterministic and,",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "hence, the corresponding constraint measure",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "is (6).",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "We further assume that the",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "matrices",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ": diag",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ", . . . ,",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "obey the non-degeneracy condition",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "(89)",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "(i. e.,",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "is a positive deﬁnite matrix). This condition ensures existence and unique-",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "ness of the classical solution, which is characterized by",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ", (",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "ϵ, σ",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": ". Indeed,",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "inserting in (86) one obtains",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "), with",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "depending lin-",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "early on",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "19",
+      "page": 19
+    },
+    {
+      "level": "H2",
+      "text": "5.2.",
+      "page": 19
+    },
+    {
+      "level": "H1",
+      "text": "Material likelihood.",
+      "page": 19
+    },
+    {
+      "level": "H2",
+      "text": "Suppose that the material behavior of every edge",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "is char-",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "acterized by a local material likelihood measure of the form",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "(90)",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "exp",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "parameterized by",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "0. Thus,",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "is a sliding Gaussian measure, i. e., is Gaussian in",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "the variable",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "and invariant under translations along the line",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ". We note",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "that",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "is not ﬁnite, much less a probability measure. The local material likelihood",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "measure (90) represents a stochastic Ohms law for electrical circuits, a stochastic Darcy-",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Weisbach law for pipeline networks, and similar laws for other physical systems. The",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "global material data measure is",
+      "page": 19
+    },
+    {
+      "level": "H2",
+      "text": "5.3.",
+      "page": 19
+    },
+    {
+      "level": "H2",
+      "text": "Inference problem.",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "We verify that the conditions for transversality stated in",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Prop. 3.3 and Prop. 3.4 are indeed satisﬁed. Thus, from (90) we compute the (global)",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "material logarithmic potential as",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "(91)",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ", σ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "In order to show that",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "is sub-Gaussian, we ﬁrst argue that there are",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ", b",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "0 such",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "that",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "(92)",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "E.",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "We start by showing that Φ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "is strictly positive on any nonzero element of",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "(the linear",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "space obtained by translation of",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "to the origin). Assume (",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "ε, σ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ", which requires",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "that",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Bu",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "for some",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "0. If Φ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "((",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "ε, σ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "))  0, then",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ", which",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "implies",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Bu",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "0. In turn, by (89) this implies",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "0, hence (",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "ε, σ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ")  0. Therefore, the",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "restriction of Φ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "to",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "is a strictly positive-deﬁnite quadratic form, and there is",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "such that",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ") for all",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ". We now pick",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ", write",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "with",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ", and use again that Φ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "is a quadratic form to write",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "(93)",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ")  Φ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ")  Φ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ")(",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "where",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "is the operator norm of",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "). As",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ", this proves (92)",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "with",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Similarly, there is",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "0 such that for any",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "we have",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "(94)",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "2Φ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ")  2Φ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "2Φ",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Using",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ", then from (92) and (94), we obtain",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "(95)",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ")  3",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ")  3",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "(2  3",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Therefore, there are",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": ", c, b",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "0 such that",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "(96)",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "b,",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "E, y",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Z,",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "which is condition (18). By Prop. 3.3 we obtain that the measures are uniformly bounded",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "and uniformly tight, hence transversal.",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "20",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "S. CONTI, F. HOFFMANN AND M. ORTIZ",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "In order to use Prop. 3.4, we observe that Φ",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "and the growth condition (29)",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "holds with",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ") :",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "1, since Φ",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "is quadratic in its arguments. From (30),",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "the diagonal concentration of",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "is deﬁned by the property that",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "(97)",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "ξ, ξ",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ") e",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "), with rate of convergence as in (31). The total variation of",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "is",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "positive and ﬁnite in view of (92) and, therefore, the expectation of a quantity of interest",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ") follows by normalization as",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "(98)",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "dµ",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "y, z",
+      "page": 20
+    },
+    {
+      "level": "H2",
+      "text": "5.4.",
+      "page": 20
+    },
+    {
+      "level": "H2",
+      "text": "Approximation by empirical data.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "We ﬁnally approximate",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "by discrete mea-",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "sures",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "of the form (5), and then apply Prop. 4.1 and Cor. 4.2. For every",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "we deﬁne",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "below a partition",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "of",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "on scale",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "0. The global",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "material data set is then",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "and the partition of",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "is",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ". Setting",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ": (",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", we proceed to check Assumption (v)",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "and Assumption (iv) elementwise. Speciﬁcally, we verify (iv) for all",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", not only for",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", since",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "cannot be characterized elementwise.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "We focus on a single element",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "in the network and deﬁne",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "(99)",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", σ",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ") :",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "so that",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", with",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "the standard Euclidean norm and",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "deﬁned implicitly",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "in (87). We set",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ". For the rest of the construction, we drop",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "from the notation. Set",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ")  (",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "ϵ,",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", which deﬁnes",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "a partition of",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "which obeys",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ". Furthermore,",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "for all",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", so that Assumption (v) follows. Assumption (iv) holds with",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "2, since",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Assumption (i) of Prop. 4.1 follows directly from Prop. 3.3, since",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "is sub-Gaussian.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Setting",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ") we see that Assumption (ii) and (69) hold, with",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "1 and",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "0. Finally, we choose an annealing schedule",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "such that",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "0, ensuring that",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Assumption (iii) holds. Speciﬁcally, we may choose",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", as suggested by (11) to",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "obtain an approximation with the claimed quantitative convergence rate.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Acknowledgments",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "This work was funded by the Deutsche Forschungsgemeinschaft (DFG, German Re-",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "search Foundation)",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "via",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "project 211504053 - SFB 1060; project 441211072 - SPP 2256;",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "and project 390685813 - GZ 20471 - HCM.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "References",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "E. Bernton, P. E. Jacob, M. Gerber, and C. P. Robert",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Approximate Bayesian computation",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "with the Wasserstein distance",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", Journal of the Royal Statistical Society, (2019).",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "S.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Conti,",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "F.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Hoffmann,",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "and",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "M.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Ortiz",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Model-free",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "data-driven",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "inference",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Preprint",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "arXiv:2106.02728, 2021.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "S. Conti, S. Muller, and M. Ortiz",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Data-driven problems in elasticity",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": ", Archive for Rational",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Mechanics and Analysis, 229 (2018), pp. 79123.",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "ANSATZ-FREE DATA-DRIVEN INFERENCE",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "21",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "M. Dashti and A. M. Stuart",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "The Bayesian approach to inverse problems",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", Springer International",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Publishing, Cham, 2017, pp. 311428.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "M. M. Dunlop, T. Helin, and A. M. Stuart",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Hyperparameter estimation in bayesian map es-",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "timation: Parameterizations and consistency",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", SMAI Journal of Computational Mathematics, 6",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "(2020), pp. 69100.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "P. Gwiazda, T. Lorenz, and A. Marciniak-Czochra",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "A nonlinear structured poopulation model:",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Lipschitz continuity of measure-valued solutions with respect to model ingredients",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", Journal of Dif-",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "ferential Equations, 248 (2010), p. 27032735.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "L. Herrmann, C. Schwab, and J. Zech",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Deep neural network expression of posterior expectations",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "in bayesian pde inversion",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", Inverse Problems, 36 (2020), p. 125011.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "T. Kirchdoerfer and M. Ortiz",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Data-driven computational mechanics",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", Computer Methods in",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Applied Mechanics and Engineering, 304 (2016), pp. 81101.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "B. T. Knapik, B. T. Szabo, A. W. van der Vaart, and J. H. van Zanten",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Bayes procedures for",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "adaptive inference in inverse problems for the white noise model",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", Probab. Theory Relat. Fields,",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "164 (2016), pp. 771813.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "10",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "B. T. Knapik, A. W. van der Vaart, and J. H. van Zanten",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Bayesian inverse problems with",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Gaussian priors",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", Annals of Statistics, 39 (2011), pp. 26262657.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "11",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "M. Massi, P. Perdikaris, and G. E. Karniadakis",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Physics-informed neural networks: A deep",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "learning framework for solving forward and inverse problems involving nonlinear partial diﬀerential",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "equations",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", Journal of Computational Physics, 378 (2017), pp. 686707.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "12",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "F. J. Pinski, G. Simpson, A. M. Stuart, and H. Weber",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Kullback-Leibler approximation for",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "probability measures on inﬁnite dimensional spaces",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", SIAM Journal on Mathematical Analysis, 47",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "(2015), pp. 40914122.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "13",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "E. Prume, R. Eggersmann, S. Reese, and M. Ortiz",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Model-free data-driven inference in com-",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "putational mechanics",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ". Preprint arXiv:2207.06419, 2022.",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "14",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "A. M. Stuart",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "Inverse problems: A bayesian perspective",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": ", Acta Numerica, 19 (2010), p. 451559.",
+      "page": 21
+    }
+  ],
+  "metadata": {
+    "page_count": 21,
+    "body_font_size": 10.0,
+    "font_distribution": {
+      "10.0": 950,
+      "7.0": 337,
+      "8.0": 115,
+      "5.0": 25,
+      "11.5": 8,
+      "9.0": 2,
+      "20.0": 1
+    },
+    "detected_language": "en"
+  }
+}
